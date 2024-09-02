@@ -90,3 +90,13 @@ async function getallUsers() {
 }
 
 getallUsers();
+
+//
+//
+//
+
+fetch("https://jsonplaceholder.typicode.com/users")
+  .then((response) => response.json())
+  .then((data) => console.log(data)) // handling response
+  .catch((err) => console.log(err))
+  .finally(() => console.log("execution done"));
