@@ -117,3 +117,18 @@ fetch("https://reqres.in/api/users")
 fetch("https://reqres.in/api/users/23") // 23 does not exists, error 404, but still not error (not in catch), goes on onFullFillment because network request sent and came back.
   .then((res) => res.json())
   .then((data) => console.log(data));
+
+//
+//
+//
+
+fetch("https://reqres.in/api/users/23")
+  .then((res) => {
+    if (res.ok) {
+      console.log("Success"); // Gives us successfull or not in onFullFillment.
+    } else {
+      console.log("Not Successful");
+    }
+    return res.json();
+  })
+  .then((data) => console.log(data));
