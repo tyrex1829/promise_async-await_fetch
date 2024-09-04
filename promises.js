@@ -109,3 +109,11 @@ fetch("https://reqres.in/api/users")
   // .then((res) => console.log(res)); // This will return response object, which contains body where our data is present, we can't access that body of data directly from response object, so we need to call a method on it to convert response to json format.
   .then((res) => res.json()) // Now this will return another promise, so we need to do again ".then" and this will return our data.
   .then((data) => console.log(data));
+
+//
+//
+//
+
+fetch("https://reqres.in/api/users/23") // 23 does not exists, error 404, but still not error (not in catch), goes on onFullFillment because network request sent and came back.
+  .then((res) => res.json())
+  .then((data) => console.log(data));
